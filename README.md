@@ -1,6 +1,6 @@
 # Flutter Animations
 
-This is my personal GitHub repository where I've stored the code examples and projects while learning Vandad Nahavandipoor's Flutter animation courses. The repository is organized into folders for each section of the course and contains the corresponding code for that section with comments explaining the implementation.
+This is my personal GitHub repository where I've stored the code examples and projects while learning [Vandad Nahavandipoor](https://youtube.com/playlist?list=PL6yRaaP0WPkW3kwAerPeRqGBvJfO8O4S7)'s Flutter animation courses. The repository is organized into folders for each section of the course and contains the corresponding code for that section with comments explaining the implementation.
 
 ## Contents
 
