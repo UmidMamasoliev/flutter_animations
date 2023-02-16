@@ -7,7 +7,6 @@ This is my personal GitHub repository where I've stored the code examples and pr
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
