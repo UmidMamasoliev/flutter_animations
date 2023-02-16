@@ -25,7 +25,3 @@ This repository serves as a resource for me to refer back to while practicing an
 ## Contributing
 
 As this is a personal repository, I am not currently accepting contributions. However, I appreciate any feedback you may have on the code.
-
-## License
-
-This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
