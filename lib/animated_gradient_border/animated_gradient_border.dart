@@ -3,9 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class AnimatedGradientBorder extends StatefulWidget {
-  final Widget child;
-
-  const AnimatedGradientBorder({super.key, required this.child});
+  const AnimatedGradientBorder({super.key});
 
   @override
   State<AnimatedGradientBorder> createState() => _AnimatedGradientBorderState();
@@ -69,7 +67,22 @@ class _AnimatedGradientBorderState extends State<AnimatedGradientBorder>
               borderRadius: BorderRadius.circular(20.0),
               border: Border.all(color: Colors.transparent, width: 2.0),
             ),
-            child: widget.child,
+            child: Container(
+              decoration: BoxDecoration(
+                color: const Color(0xFF1C1B1F),
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              child: const Center(
+                child: Text(
+                  "Hello, World!",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
           );
         });
   }
