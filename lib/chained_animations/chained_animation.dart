@@ -36,7 +36,9 @@ class _ChainedAnimationState extends State<ChainedAnimation>
     _counterClockwiseRotationController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 1),
-    );
+    )
+      ..reset()
+      ..forward();
 
     _counterClockwiseRotationAnimation = Tween<double>(
       begin: 0,
@@ -68,62 +70,69 @@ class _ChainedAnimationState extends State<ChainedAnimation>
     // status listeners
 
     _counterClockwiseRotationController.addStatusListener(
-      (status) {
-        if (status == AnimationStatus.completed) {
-          _flipAnimation = Tween<double>(
-            begin: _flipAnimation.value,
-            end: _flipAnimation.value + pi,
-          ).animate(
-            CurvedAnimation(
-              parent: _flipController,
-              curve: Curves.bounceOut,
-            ),
-          );
-
-          //reset the [_flipController] and start the animations
-
-          _flipController
-            ..reset()
-            ..forward();
-        }
-      },
+      _counterClockwiseRotationControllerListener,
     );
 
     _flipController.addStatusListener(
-      (status) {
-        if (status == AnimationStatus.completed) {
-          _counterClockwiseRotationAnimation = Tween<double>(
-            begin: _counterClockwiseRotationAnimation.value,
-            end: _counterClockwiseRotationAnimation.value + -(pi / 2),
-          ).animate(
-            CurvedAnimation(
-              parent: _counterClockwiseRotationController,
-              curve: Curves.bounceOut,
-            ),
-          );
-
-          //reset the [_counterClockwiseRotationController] and start the animations
-
-          _counterClockwiseRotationController
-            ..reset()
-            ..forward();
-        }
-      },
+      _flipControllerListener,
     );
   }
 
   @override
   void dispose() {
-    _counterClockwiseRotationController.dispose();
+    _flipController.removeStatusListener(
+      _flipControllerListener,
+    );
+    _counterClockwiseRotationController.removeStatusListener(
+      _counterClockwiseRotationControllerListener,
+    );
     _flipController.dispose();
+    _counterClockwiseRotationController.dispose();
     super.dispose();
+  }
+
+  void _counterClockwiseRotationControllerListener(status) {
+    if (status == AnimationStatus.completed) {
+      _flipAnimation = Tween<double>(
+        begin: _flipAnimation.value,
+        end: _flipAnimation.value + pi,
+      ).animate(
+        CurvedAnimation(
+          parent: _flipController,
+          curve: Curves.bounceOut,
+        ),
+      );
+
+      //reset the [_flipController] and start the animations
+
+      _flipController
+        ..reset()
+        ..forward();
+    }
+  }
+
+  void _flipControllerListener(status) {
+    if (status == AnimationStatus.completed) {
+      _counterClockwiseRotationAnimation = Tween<double>(
+        begin: _counterClockwiseRotationAnimation.value,
+        end: _counterClockwiseRotationAnimation.value + -(pi / 2),
+      ).animate(
+        CurvedAnimation(
+          parent: _counterClockwiseRotationController,
+          curve: Curves.bounceOut,
+        ),
+      );
+
+      //reset the [_counterClockwiseRotationController] and start the animations
+
+      _counterClockwiseRotationController
+        ..reset()
+        ..forward();
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    _counterClockwiseRotationController
-      ..reset()
-      ..forward.delayed(const Duration(seconds: 1));
     return AnimatedBuilder(
         animation: _counterClockwiseRotationController,
         builder: (context, child) {
