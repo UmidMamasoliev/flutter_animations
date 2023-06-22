@@ -1,9 +1,16 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AnimatedGradientBorder extends StatefulWidget {
-  const AnimatedGradientBorder({super.key});
+  final double height;
+  final double width;
+  const AnimatedGradientBorder({
+    super.key,
+    this.height = 300,
+    this.width = 200,
+  });
 
   @override
   State<AnimatedGradientBorder> createState() => _AnimatedGradientBorderState();
@@ -58,26 +65,29 @@ class _AnimatedGradientBorderState extends State<AnimatedGradientBorder>
         animation: _animation,
         builder: (context, child) {
           return Container(
-            constraints: const BoxConstraints.tightFor(width: 150, height: 200),
+            constraints: BoxConstraints.tightFor(
+              width: widget.width.w,
+              height: widget.height.h,
+            ),
             decoration: BoxDecoration(
               gradient: SweepGradient(
                 colors: colors,
                 transform: GradientRotation(_animation.value),
               ),
-              borderRadius: BorderRadius.circular(20.0),
-              border: Border.all(color: Colors.transparent, width: 2.0),
+              borderRadius: BorderRadius.circular(20.r),
+              border: Border.all(color: Colors.transparent, width: 2.w),
             ),
             child: Container(
               decoration: BoxDecoration(
                 color: const Color(0xFF1C1B1F),
-                borderRadius: BorderRadius.circular(20.0),
+                borderRadius: BorderRadius.circular(20.r),
               ),
-              child: const Center(
+              child: Center(
                 child: Text(
                   "Hello, World!",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 18,
+                    fontSize: 18.sp,
                   ),
                   textAlign: TextAlign.center,
                 ),

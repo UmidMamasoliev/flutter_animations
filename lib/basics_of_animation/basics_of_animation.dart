@@ -4,9 +4,12 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BasicsOfAnimation extends StatefulWidget {
-  const BasicsOfAnimation({super.key});
+  final double height;
+  final double width;
+  const BasicsOfAnimation({super.key, this.height = 200, this.width = 200});
 
   @override
   State<BasicsOfAnimation> createState() => _BasicsOfAnimationState();
@@ -46,11 +49,11 @@ class _BasicsOfAnimationState extends State<BasicsOfAnimation>
               alignment: Alignment.center,
               transform: Matrix4.identity()..rotateY(animation.value),
               child: Container(
-                width: 100,
-                height: 100,
+                width: widget.height.h,
+                height: widget.width.w,
                 decoration: BoxDecoration(
                   color: Colors.blue,
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(10.r),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(0.5),

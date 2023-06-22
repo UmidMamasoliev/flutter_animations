@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Cards extends StatelessWidget {
   final String title;
@@ -14,33 +15,29 @@ class Cards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+      padding: EdgeInsets.symmetric(horizontal: 15.h, vertical: 5.w),
       child: GestureDetector(
         onTap: onTap,
         child: SizedBox(
-          height: 150,
+          height: 150.h,
           width: double.maxFinite,
           child: Card(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.r)),
             color: Colors.black12,
             child: Center(
               child: Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: EdgeInsets.all(20.h),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       title,
-                      style: const TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.w400),
-                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 16.sp, fontWeight: FontWeight.w400),
+                      textAlign: TextAlign.start,
                     ),
-                    SizedBox(
-                      height: 100,
-                      width: 100,
-                      child: demo,
-                    ),
+                    demo,
                   ],
                 ),
               ),

@@ -56,6 +56,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "flutter_screenutil",
+      "rootUri": "file:///Users/umidjon/.pub-cache/hosted/pub.dev/flutter_screenutil-5.8.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///Users/umidjon/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -152,7 +158,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-06-19T13:06:59.163021Z",
+  "generated": "2023-06-20T13:11:00.177997Z",
   "generator": "pub",
   "generatorVersion": "3.0.0"
 }

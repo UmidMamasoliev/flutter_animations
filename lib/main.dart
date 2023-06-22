@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'home_page.dart';
 
@@ -11,9 +12,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData.dark(),
-      home: const HomePage(title: 'Flutter Animations'),
+    return ScreenUtilInit(
+      designSize: const Size(390, 850),
+      builder: (BuildContext context, Widget? child) {
+        return MaterialApp(
+          theme: ThemeData.dark(),
+          home: const HomePage(title: 'Flutter Animations'),
+        );
+      },
     );
   }
 }
