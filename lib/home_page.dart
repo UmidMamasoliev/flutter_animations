@@ -1,3 +1,4 @@
+import 'package:basics_of_animations/3D_animations/three_d_animations.dart';
 import 'package:basics_of_animations/basics_of_animation/basics_of_animation.dart';
 import 'package:basics_of_animations/chained_animations/chained_animation.dart';
 import 'package:basics_of_animations/widget/show_bottom_sheet_mixin.dart';
@@ -57,11 +58,21 @@ class _HomePageState extends State<HomePage> with BottomSheetMixin {
             ),
             Cards(
               title: "Chained\nAnimation",
-              demo: const ChainedAnimation(height: 100, width: 100),
+              demo: const ChainedAnimation(height: 60, width: 60),
               onTap: () {
                 showBottomSheetMixin(
                   context,
                   const ChainedAnimation(),
+                );
+              },
+            ),
+            Cards(
+              title: "3D\nAnimation",
+              demo: const ThreeDAnimations(height: 60, width: 60),
+              onTap: () {
+                showBottomSheetMixin(
+                  context,
+                  const ThreeDAnimations(),
                 );
               },
             ),
