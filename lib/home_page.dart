@@ -1,6 +1,8 @@
 import 'package:basics_of_animations/3D_animations/three_d_animations.dart';
 import 'package:basics_of_animations/basics_of_animation/basics_of_animation.dart';
 import 'package:basics_of_animations/chained_animations/chained_animation.dart';
+import 'package:basics_of_animations/hero_animations/main_page.dart';
+import 'package:basics_of_animations/hero_animations/peoples_data_class.dart';
 import 'package:basics_of_animations/widget/show_bottom_sheet_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -76,6 +78,24 @@ class _HomePageState extends State<HomePage> with BottomSheetMixin {
                 );
               },
             ),
+            Cards(
+              title: "Hero\nAnimations",
+              demo: SizedBox(
+                child: Text(
+                  people[1].emoji,
+                  style: const TextStyle(fontSize: 50),
+                ),
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const HeroAnimation(),
+                  ),
+                );
+              },
+            ),
+            const SizedBox(height: 50),
           ],
         ),
       ),
