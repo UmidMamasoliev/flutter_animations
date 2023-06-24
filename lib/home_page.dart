@@ -3,6 +3,7 @@ import 'package:basics_of_animations/basics_of_animation/basics_of_animation.dar
 import 'package:basics_of_animations/chained_animations/chained_animation.dart';
 import 'package:basics_of_animations/hero_animations/main_page.dart';
 import 'package:basics_of_animations/hero_animations/peoples_data_class.dart';
+import 'package:basics_of_animations/implicit_animations/implicit_animation.dart';
 import 'package:basics_of_animations/widget/show_bottom_sheet_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,6 +21,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with BottomSheetMixin {
+  final Image image = Image.asset('assets/images/wallpaper.jpg', width: 100);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,6 +94,21 @@ class _HomePageState extends State<HomePage> with BottomSheetMixin {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const HeroAnimation(),
+                  ),
+                );
+              },
+            ),
+            Cards(
+              title: "Implicit\nAnimations",
+              demo: Hero(
+                tag: 'assets/images/wallpaper.jpg',
+                child: image,
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ImplicitAnimation(image: image),
                   ),
                 );
               },

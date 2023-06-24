@@ -134,55 +134,56 @@ class _ChainedAnimationState extends State<ChainedAnimation>
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-        animation: _counterClockwiseRotationController,
-        builder: (context, child) {
-          return Transform(
-            alignment: Alignment.center,
-            transform: Matrix4.identity()
-              ..rotateZ(_counterClockwiseRotationAnimation.value),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                AnimatedBuilder(
-                    animation: _flipController,
-                    builder: (context, child) {
-                      return Transform(
-                        alignment: Alignment.centerRight,
-                        transform: Matrix4.identity()
-                          ..rotateY(_flipAnimation.value),
-                        child: ClipPath(
-                          clipper:
-                              const HalfCircleClipper(side: CircleSide.left),
-                          child: Container(
-                            height: widget.height.h,
-                            width: widget.width.w,
-                            color: const Color(0xff0057b7),
-                          ),
-                        ),
-                      );
-                    }),
-                AnimatedBuilder(
-                    animation: _flipController,
-                    builder: (context, child) {
-                      return Transform(
-                        alignment: Alignment.centerLeft,
-                        transform: Matrix4.identity()
-                          ..rotateY(_flipAnimation.value),
-                        child: ClipPath(
-                          clipper:
-                              const HalfCircleClipper(side: CircleSide.right),
-                          child: Container(
-                            height: widget.height.h,
-                            width: widget.width.w,
-                            color: const Color(0xffffd700),
-                          ),
-                        ),
-                      );
-                    }),
-              ],
-            ),
-          );
-        });
+      animation: _counterClockwiseRotationController,
+      builder: (context, child) {
+        return Transform(
+          alignment: Alignment.center,
+          transform: Matrix4.identity()
+            ..rotateZ(_counterClockwiseRotationAnimation.value),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              AnimatedBuilder(
+                animation: _flipController,
+                builder: (context, child) {
+                  return Transform(
+                    alignment: Alignment.centerRight,
+                    transform: Matrix4.identity()
+                      ..rotateY(_flipAnimation.value),
+                    child: ClipPath(
+                      clipper: const HalfCircleClipper(side: CircleSide.left),
+                      child: Container(
+                        height: widget.height.h,
+                        width: widget.width.w,
+                        color: const Color(0xff0057b7),
+                      ),
+                    ),
+                  );
+                },
+              ),
+              AnimatedBuilder(
+                animation: _flipController,
+                builder: (context, child) {
+                  return Transform(
+                    alignment: Alignment.centerLeft,
+                    transform: Matrix4.identity()
+                      ..rotateY(_flipAnimation.value),
+                    child: ClipPath(
+                      clipper: const HalfCircleClipper(side: CircleSide.right),
+                      child: Container(
+                        height: widget.height.h,
+                        width: widget.width.w,
+                        color: const Color(0xffffd700),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 }
