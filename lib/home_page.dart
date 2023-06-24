@@ -100,10 +100,7 @@ class _HomePageState extends State<HomePage> with BottomSheetMixin {
             ),
             Cards(
               title: "Implicit\nAnimations",
-              demo: Hero(
-                tag: 'assets/images/wallpaper.jpg',
-                child: image,
-              ),
+              demo: Hero(tag: 'assets/images/wallpaper.jpg', child: image),
               onTap: () {
                 Navigator.push(
                   context,
