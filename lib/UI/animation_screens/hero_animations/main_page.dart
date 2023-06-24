@@ -1,7 +1,8 @@
-import 'package:basics_of_animations/hero_animations/details_page.dart';
-import 'package:basics_of_animations/hero_animations/peoples_data_class.dart';
+import 'package:basics_of_animations/data/models/person_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'details_page.dart';
 
 class HeroAnimation extends StatefulWidget {
   const HeroAnimation({super.key});

@@ -1,4 +1,4 @@
-import 'package:basics_of_animations/hero_animations/peoples_data_class.dart';
+import 'package:basics_of_animations/data/models/person_model.dart';
 import 'package:flutter/material.dart';
 
 class DetailsPage extends StatelessWidget {
