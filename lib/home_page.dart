@@ -45,40 +45,28 @@ class _HomePageState extends State<HomePage> with BottomSheetMixin {
               title: "Animated\nGradient\nBorder",
               demo: const AnimatedGradientBorder(height: 100, width: 100),
               onTap: () {
-                showBottomSheetMixin(
-                  context,
-                  const AnimatedGradientBorder(),
-                );
+                showBottomSheetMixin(context, const AnimatedGradientBorder());
               },
             ),
             Cards(
               title: "Basics Of\nAnimation",
               demo: const BasicsOfAnimation(height: 100, width: 100),
               onTap: () {
-                showBottomSheetMixin(
-                  context,
-                  const BasicsOfAnimation(),
-                );
+                showBottomSheetMixin(context, const BasicsOfAnimation());
               },
             ),
             Cards(
               title: "Chained\nAnimation",
               demo: const ChainedAnimation(height: 60, width: 60),
               onTap: () {
-                showBottomSheetMixin(
-                  context,
-                  const ChainedAnimation(),
-                );
+                showBottomSheetMixin(context, const ChainedAnimation());
               },
             ),
             Cards(
               title: "3D\nAnimation",
               demo: const ThreeDAnimations(height: 60, width: 60),
               onTap: () {
-                showBottomSheetMixin(
-                  context,
-                  const ThreeDAnimations(),
-                );
+                showBottomSheetMixin(context, const ThreeDAnimations());
               },
             ),
             Cards(
