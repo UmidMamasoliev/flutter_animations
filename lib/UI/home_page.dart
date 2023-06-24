@@ -1,15 +1,15 @@
-import 'package:basics_of_animations/UI/widget/show_bottom_sheet_mixin.dart';
+import 'package:basics_of_animations/UI/widgets/show_bottom_sheet_mixin.dart';
 import 'package:basics_of_animations/data/models/person_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'animation_screens/3D_animations/three_d_animations.dart';
-import 'animation_screens/animated_gradient_border/animated_gradient_border.dart';
-import 'animation_screens/basics_of_animation/basics_of_animation.dart';
-import 'animation_screens/chained_animations/chained_animation.dart';
-import 'animation_screens/hero_animations/main_page.dart';
-import 'animation_screens/implicit_animations/implicit_animation.dart';
-import 'widget/cards.dart';
+import 'screens/3D_animations/three_d_animations.dart';
+import 'screens/animated_gradient_border/animated_gradient_border.dart';
+import 'screens/basics_of_animation/basics_of_animation.dart';
+import 'screens/chained_animations/chained_animation.dart';
+import 'screens/hero_animations/main_page.dart';
+import 'screens/implicit_animations/implicit_animation.dart';
+import 'widgets/cards.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.title});
